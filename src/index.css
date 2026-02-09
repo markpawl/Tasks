@@ -1,0 +1,13 @@
+.completed {
+  text-decoration: line-through;
+  color: green;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+}
