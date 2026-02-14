@@ -1,4 +1,11 @@
-h1, h2, h3 {
+body {
+  background-color: white;
+  /* Light cream */
+}
+
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
@@ -7,13 +14,37 @@ h1, h2, h3 {
   padding: 5px;
   border: 1px solid black;
   margin: 0px;
+  list-style-type: none;
+  /* Remove bullets */
+  background-color: white;
 }
 
 .app {
-  padding: 5px;
+  padding: 10pt;
   width: 260px;
   border: 1px solid black;
+  background-color: #FDF5E6;
+  /* Light cream */
 }
+
+.add-item {
+  margin-top: 5px;
+  /* border-top: 1px solid black; Removed as requested */
+  padding-top: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* ... rest of the file ... */
 
 #root {
   max-width: 1280px;
@@ -27,9 +58,11 @@ h1, h2, h3 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -38,6 +71,7 @@ h1, h2, h3 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
