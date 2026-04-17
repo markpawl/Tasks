@@ -69,7 +69,7 @@ function TaskForm(props) {
 
 function TaskList() {
 
-  const [taskitems, setTodoitems] = useState([
+  const [taskitems, setTaskitems] = useState([
     { content: "Learn React", completed: false },
     { content: "Build a Task App", completed: false },
     { content: "Master Vite", completed: false }
@@ -83,7 +83,7 @@ function TaskList() {
     }
     let scratchpad = [...taskitems];
     scratchpad.splice(idx, 1);
-    setTodoitems(scratchpad);
+    setTaskitems(scratchpad);
     if (formItem && formItem.idx === idx) {
       setFormItem(null); // Ensure form clears if we delete the selected item
     } else if (formItem && formItem.idx > idx) {
@@ -103,9 +103,9 @@ function TaskList() {
 
   const onSave = (item) => {
     if (item.idx !== undefined) {
-      setTodoitems(taskitems.map((i, index) => (index === item.idx ? { ...i, content: item.content, completed: item.completed } : i)));
+      setTaskitems(taskitems.map((i, index) => (index === item.idx ? { ...i, content: item.content, completed: item.completed } : i)));
     } else {
-      setTodoitems([...taskitems, item]);
+      setTaskitems([...taskitems, item]);
     }
     setFormItem(null);
   };

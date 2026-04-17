@@ -1,4 +1,4 @@
-# React 19 Todo Implementation (DevEx Focus)
+# React 19 Task Implementation (DevEx Focus)
 
 A modern task management interface built to demonstrate clean state management, focus handling, and automated code quality standards in a React 19 environment.
 
