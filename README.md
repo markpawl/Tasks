@@ -1,12 +1,22 @@
-# React + Vite
+# React 19 Todo Implementation (DevEx Focus)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern task management interface built to demonstrate clean state management, focus handling, and automated code quality standards in a React 19 environment.
 
-Currently, two official plugins are available:
+## 🛠 Developer Experience Highlights
+This project serves as a reference for modern frontend workflows, focusing on:
+* **Strict Linting:** Implements the latest ESLint "Flat Config" system for consistent code quality across the codebase.
+* **Vite Tooling:** Leverages Vite for near-instant Hot Module Replacement (HMR) and optimized build cycles.
+* **Focus Management:** Uses `useRef` and `useEffect` hooks to programmatically manage input focus, reducing friction during task entry.
+* **UI/Logic Separation:** Implements a visual sorting layer that prioritizes active tasks without mutating the underlying data indices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
+* **Framework:** React 19 (Functional Components & Hooks)
+* **Build Tool:** Vite
+* **State:** Local State (useState, useRef)
+* **Style:** CSS Modules with a custom "light cream" accessibility theme
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Getting Started
+1. Clone the repository.
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Run the linter: `npm run lint`
