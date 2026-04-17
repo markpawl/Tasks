@@ -2,16 +2,16 @@ import { useState, useEffect, useRef } from 'react'
 
 import './App.css'
 
-function ToDoApp() {
+function TaskApp() {
   return (
     <div>
-      <ToDoList />
+      <TaskList />
     </div>
   )
 }
 
 
-function ToDoForm(props) {
+function TaskForm(props) {
   const inputRef = useRef(null);
 
   function onChange(e) {
@@ -67,11 +67,11 @@ function ToDoForm(props) {
   )
 }
 
-function ToDoList() {
+function TaskList() {
 
-  const [todoitems, setTodoitems] = useState([
+  const [taskitems, setTodoitems] = useState([
     { content: "Learn React", completed: false },
-    { content: "Build a To-Do App", completed: false },
+    { content: "Build a Task App", completed: false },
     { content: "Master Vite", completed: false }
   ]);
 
@@ -81,7 +81,7 @@ function ToDoList() {
     if (formItem && formItem.idx === idx) {
       setFormItem(null);
     }
-    let scratchpad = [...todoitems];
+    let scratchpad = [...taskitems];
     scratchpad.splice(idx, 1);
     setTodoitems(scratchpad);
     if (formItem && formItem.idx === idx) {
@@ -96,16 +96,16 @@ function ToDoList() {
     if (formItem && formItem.idx === idx) {
       setFormItem(null);
     } else {
-      let itemToEdit = { "idx": idx, content: todoitems[idx].content, completed: todoitems[idx].completed }
+      let itemToEdit = { "idx": idx, content: taskitems[idx].content, completed: taskitems[idx].completed }
       setFormItem(itemToEdit);
     }
   };
 
   const onSave = (item) => {
     if (item.idx !== undefined) {
-      setTodoitems(todoitems.map((i, index) => (index === item.idx ? { ...i, content: item.content, completed: item.completed } : i)));
+      setTodoitems(taskitems.map((i, index) => (index === item.idx ? { ...i, content: item.content, completed: item.completed } : i)));
     } else {
-      setTodoitems([...todoitems, item]);
+      setTodoitems([...taskitems, item]);
     }
     setFormItem(null);
   };
@@ -119,16 +119,16 @@ function ToDoList() {
   }
 
   // Visual Sort: Uncompleted first, then Completed. Preserve original index for logic.
-  const sortedItems = todoitems
+  const sortedItems = taskitems
     .map((item, idx) => ({ ...item, originalIdx: idx }))
     .sort((a, b) => (a.completed === b.completed ? 0 : a.completed ? 1 : -1));
 
   return (
     <div className={'app'}>
-      <h2>My To-Do List</h2>
+      <h2>My Task List</h2>
       <ul className={'boxed'}>
         {sortedItems.map((item) => (
-          <ToDoItem
+          <TaskItem
             key={item.originalIdx}
             item={item}
             idx={item.originalIdx}
@@ -141,13 +141,13 @@ function ToDoList() {
         </li>
       </ul>
       <br />
-      <ToDoForm formItem={formItem} setFormItem={setFormItem} onSave={onSave} onDelete={onDelete} onReset={onReset} />
+      <TaskForm formItem={formItem} setFormItem={setFormItem} onSave={onSave} onDelete={onDelete} onReset={onReset} />
     </div>
   )
 }
 
 
-function ToDoItem(props) {
+function TaskItem(props) {
   return (
     <li
       className={props.item.completed ? "completed" : ""}
@@ -165,7 +165,7 @@ function App() {
 
   return (
     <>
-      <ToDoApp />
+      <TaskApp />
     </>
   )
 }
